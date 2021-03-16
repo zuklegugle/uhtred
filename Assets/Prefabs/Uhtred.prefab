@@ -118,3 +118,4 @@ MonoBehaviour:
   sprite: {fileID: 2020070767747792812}
   animator: {fileID: 2020070767747792813}
   movement_speed: 1.5
+  sneaking_speed: 0.5
