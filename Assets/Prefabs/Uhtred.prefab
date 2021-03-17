@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2020070767747792787}
   - component: {fileID: 2020070767747792812}
   - component: {fileID: 2020070767747792813}
+  - component: {fileID: 7081167413989270262}
   - component: {fileID: -6168518293047666283}
   - component: {fileID: 5611279472378256373}
   m_Layer: 0
@@ -104,6 +105,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &7081167413989270262
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020070767747792814}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!114 &-6168518293047666283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2020070767747792812}
   animator: {fileID: 2020070767747792813}
-  movement_speed: 1
-  sneaking_speed: 0.25
+  movement_speed: 5
+  sneaking_speed: 2.5
 --- !u!114 &5611279472378256373
 MonoBehaviour:
   m_ObjectHideFlags: 0
