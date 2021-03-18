@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
 
         if (moveInput.x < 0)
         {
-            sprite.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            //sprite.flipX = true;
         }
         else if (moveInput.x > 0)
         {
-            sprite.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            //sprite.flipX = false;
         }
 
 
