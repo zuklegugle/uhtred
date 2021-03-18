@@ -16,6 +16,12 @@ public class PlayerController : MonoBehaviour
     private float current_speed = 1f;
 
     private Vector2 moveInput;
+
+
+    public LayerMask enemyLayers;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public int attackDamage = 20;
     
     // Start is called before the first frame update
     void Start()
@@ -93,6 +99,19 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             animator.SetTrigger("attack");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
+
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
