@@ -7,11 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     public SpriteRenderer sprite;
     public Animator animator;
+    public Rigidbody2D rb;
+
     public float movement_speed = 1;
     public float sneaking_speed = .25f;
 
     private bool sneaking = false;
-    
+    private float current_speed = 1f;
+
     private Vector2 moveInput;
     
     // Start is called before the first frame update
@@ -20,19 +23,22 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(moveInput.x, moveInput.y) * current_speed;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        float speed;
         if (!sneaking)
         {
-            speed = movement_speed;
+            current_speed = movement_speed;
         }
         else
         {
-            speed = sneaking_speed;
+            current_speed = sneaking_speed;
         }
-        transform.position += new Vector3(moveInput.x, moveInput.y, 0) * Time.deltaTime * speed;
 
         if (moveInput.x < 0)
         {
