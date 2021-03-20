@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!sneaking)
             {
-                //animator.SetBool("running", true);
+                animator.SetBool("running", true);
                 animator.SetBool("sneaking", false);
             }
             else
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-               // animator.SetBool("running", false);
+                animator.SetBool("running", false);
             }
         }
     }
